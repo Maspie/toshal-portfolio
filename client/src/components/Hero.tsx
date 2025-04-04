@@ -8,6 +8,7 @@ import { useTheme } from "@/lib/theme";
 
 export function Hero() {
   const { theme } = useTheme();
+// Render background particles based on the active theme
 
   return (
     <div
@@ -25,6 +26,7 @@ export function Hero() {
               number: { value: 60, density: { enable: true, area: 800 } },
               color: { value: "#d1d5db" },
               links: { enable: true, color: "#e5e7eb", distance: 120, opacity: 0.4 },
+// Animate hero content on mount using Framer Motion
               move: { enable: true, speed: 1 },
               shape: { type: "circle" },
               opacity: { value: 0.5 },
@@ -32,6 +34,7 @@ export function Hero() {
             },
             detectRetina: true,
           }}
+// Show role animation and action buttons
           className="absolute inset-0 -z-10"
         />
       )}
