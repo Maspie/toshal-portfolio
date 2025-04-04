@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  :root {
+    --background: 45 33% 98%;
+    --foreground: 222.2 84% 4.9%;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground transition-colors duration-300;
+  }
+
+  /* Enhanced Aurora gradient effect for dark mode */
+  .dark body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 50% 0%, 
+        rgba(88, 28, 135, 0.15),
+        transparent 50%),
+      radial-gradient(circle at 100% 0%, 
+        rgba(124, 58, 237, 0.1),
+        transparent 50%),
+      radial-gradient(at 0% 0%, 
+        rgba(67, 56, 202, 0.1),
+        transparent 50%),
+      radial-gradient(at 100% 100%, 
+        rgba(236, 72, 153, 0.1),
+        transparent 50%);
+    background-size: 200% 200%;
+    z-index: -1;
+    animation: aurora 20s ease infinite;
+    pointer-events: none;
+  }
+
+  @keyframes aurora {
+    0%, 100% {
+      background-position: 0% 0%;
+    }
+    25% {
+      background-position: 100% 0%;
+    }
+    50% {
+      background-position: 100% 100%;
+    }
+    75% {
+      background-position: 0% 100%;
+    }
+  }
+
+  /* Particle animation */
+  .particle {
+    position: absolute;
+    opacity: 0;
+    animation: particle-animation 3s ease-in infinite;
+  }
+
+  @keyframes particle-animation {
+    0% {
+      transform: translateY(0) scale(0);
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      transform: translateY(-100px) scale(1);
+      opacity: 0;
+    }
+  }
+
+  /* Adjust cat eyes position */
+  .cat-eyes-container {
+    position: fixed;
+    top: 15vh; /* Move eyes higher up */
+    left: 0;
+    right: 0;
+    z-index: 0;
+  }
+
+  /* Shine animation for dynamic background */
+  @keyframes shine {
+    0% {
+      transform: translateX(-100%);
+    }
+    50%, 100% {
+      transform: translateX(100%);
+    }
+  }
+
+  .animate-shine {
+    animation: shine 8s infinite;
+  }
+
+  /* Smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Better text wrapping for headings */
+  h1, h2, h3, h4, h5, h6 {
+    @apply break-words hyphens-auto;
+  }
+}
+
+/* Utility classes */
+.backdrop-blur-sm {
+  backdrop-filter: blur(8px);
+}
+
+.bg-gradient-primary {
+  @apply bg-gradient-to-r from-primary to-purple-500 dark:to-blue-500;
+}
+
+/* Enhanced hover effects */
+.hover-glow {
+  @apply transition-shadow duration-300;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px theme('colors.primary.DEFAULT');
+}
