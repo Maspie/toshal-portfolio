@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { ChatbotPanel } from "./ChatbotPanel";
-import { MessageSquare } from "lucide-react"; // modern icon set
+import ChatbotPanel from "./ChatbotPanel";
+import { MessageSquare } from "lucide-react"; 
 
 export const ChatbotLauncher = () => {
   const [isOpen, setIsOpen] = useState(false);
