@@ -1,6 +1,6 @@
 
 export async function askOpenRouter(userMessage: string): Promise<string> {
-  const prompt = \`
+  const prompt = `
 You are an assistant for Toshal Warke's portfolio website.
 Reply in structured JSON when needed or in short messages otherwise.
 
@@ -19,7 +19,7 @@ Assistant: I’m Toshal’s assistant, here to help explore his work!
 
 User: \${userMessage}
 Assistant:
-  \`;
+  `;
 
   const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
     method: "POST",
