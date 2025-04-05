@@ -1,8 +1,10 @@
+// ChatbotLauncher.tsx
+
 import { useState } from "react";
 import ChatbotPanel from "./ChatbotPanel";
-import { MessageSquare } from "lucide-react"; 
+import { MessageSquare } from "lucide-react";
 
-export const ChatbotLauncher = () => {
+const ChatbotLauncher = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -21,3 +23,5 @@ export const ChatbotLauncher = () => {
     </>
   );
 };
+
+export default ChatbotLauncher; // ✅ now it supports default import
