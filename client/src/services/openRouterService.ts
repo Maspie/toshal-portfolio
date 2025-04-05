@@ -17,14 +17,14 @@ Assistant: { "action": "scroll", "target": "contact" }
 User: Who are you?
 Assistant: I’m Toshal’s assistant, here to help explore his work!
 
-User: \${userMessage}
+User: ${userMessage}
 Assistant:
   `;
 
   const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
     method: "POST",
     headers: {
-      "Authorization": \`Bearer \${import.meta.env.VITE_OPENROUTER_API_KEY}\`,
+      "Authorization": `Bearer ${import.meta.env.VITE_OPENROUTER_API_KEY}`,
       "Content-Type": "application/json",
       "HTTP-Referer": "https://yourwebsite.com",
       "X-Title": "Toshal Portfolio Assistant"
