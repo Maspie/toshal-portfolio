@@ -1,4 +1,4 @@
-// ChatbotLauncher.tsx
+
 
 import { useState } from "react";
 import ChatbotPanel from "./ChatbotPanel";
@@ -24,4 +24,4 @@ const ChatbotLauncher = () => {
   );
 };
 
-export default ChatbotLauncher; // ✅ now it supports default import
+export default ChatbotLauncher; 
