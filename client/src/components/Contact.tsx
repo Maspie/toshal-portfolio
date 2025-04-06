@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { Send, Github, Linkedin } from "lucide-react";
-import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 
@@ -52,7 +51,7 @@ export function Contact() {
             </div>
           </motion.div>
 
-          {/* FormSubmit Form */}
+          {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -94,14 +93,16 @@ export function Contact() {
                 className="rounded-xl px-4 py-3 bg-background/80 border border-border min-h-[150px] focus:outline-none focus:ring-2 focus:ring-primary transition"
               />
 
-              <Button
+              {/* Glassy Send Button like Hero section */}
+              <motion.button
                 type="submit"
-                className="w-full gap-2 group relative overflow-hidden rounded-xl py-3 text-base"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-white/10 bg-white/5 text-white font-medium shadow-md backdrop-blur-md hover:bg-primary/20 transition-all"
               >
-                <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
+                <Send className="w-4 h-4 group-hover:rotate-45 transition-transform" />
                 Send Message
-                <span className="absolute inset-0 w-full h-full bg-primary/10 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
-              </Button>
+              </motion.button>
             </form>
           </motion.div>
         </div>
