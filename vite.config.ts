@@ -1,15 +1,16 @@
-// client/vite.config.ts
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import path from "path";
 
-// 🚨 Replace this with your actual GitHub repo name
+// Replace with your GitHub repo name
 const repoName = "toshal-portfolio";
 
 export default defineConfig({
-  base: `/${repoName}/`, // GitHub Pages needs this to serve from a subpath
+  base: `/${repoName}/`,
   plugins: [react()],
+  root: path.resolve(__dirname, "client"), // <== your frontend source lives here
   build: {
-    outDir: "dist",
+    outDir: path.resolve(__dirname, "dist"), // <== where to generate build
     emptyOutDir: true,
   },
 });
