@@ -112,7 +112,7 @@ export function Hero() {
           >
             {/* Glassy CV Button */}
             <motion.a
-              href="/toshal-portfolio/Toshal_Warke_Resume.pdf"
+              href="/toshal-portfolio/Toshal%20Warke.pdf"
               download
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
