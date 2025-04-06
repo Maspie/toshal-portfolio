@@ -5,7 +5,6 @@ import { TypeAnimation } from "react-type-animation";
 import Particles from "@tsparticles/react";
 import { ParticlesBackground } from "./ParticlesBackground";
 import { useTheme } from "@/lib/theme";
-import Tilt from "react-parallax-tilt";
 
 export function Hero() {
   const { theme } = useTheme();
@@ -132,29 +131,24 @@ export function Hero() {
           </motion.div>
         </div>
 
-        {/* Right Image with effects */}
-        <Tilt
-          glareEnable={true}
-          glareMaxOpacity={0.2}
-          glareColor="#ffffff"
-          glarePosition="all"
-          tiltMaxAngleX={10}
-          tiltMaxAngleY={10}
-          className="w-[320px] h-[320px] md:w-[420px] md:h-[420px] rounded-full"
+        {/* Right Image (no Tilt wrapper) */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 1 }}
+          className="relative flex justify-center items-center w-full h-full z-10"
         >
-          <motion.img
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 1 }}
-            src="/toshal-portfolio/image.jpeg"
-            alt="Toshal"
-            className="w-full h-full object-cover rounded-full shadow-xl border-2 border-purple-500 hover:border-purple-300 transition duration-300 ease-in-out"
+          <div
+            className="w-[320px] h-[320px] md:w-[420px] md:h-[420px] bg-no-repeat bg-center bg-cover rounded-full shadow-lg"
             style={{
-              maskImage: "radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%)",
-              WebkitMaskImage: "radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%)",
+              backgroundImage: "url('/toshal-portfolio/image.jpeg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              maskImage: "radial-gradient(circle, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 100%)",
+              WebkitMaskImage: "radial-gradient(circle, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 100%)",
             }}
           />
-        </Tilt>
+        </motion.div>
       </motion.div>
     </div>
   );
