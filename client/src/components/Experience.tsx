@@ -31,24 +31,20 @@ export function Experience() {
           Work Experience
         </motion.h2>
 
-        <div className="relative max-w-3xl mx-auto pl-8">
-          {/* Top dot */}
-          <div className="absolute left-0 top-0 w-3 h-3 bg-primary rounded-full -translate-x-1.5 z-10" />
-          
-          {/* Vertical line */}
-          <div className="absolute left-0 top-0 bottom-0 w-px bg-primary/30 translate-x-1" />
+        <div className="max-w-3xl mx-auto relative">
+          {/* vertical line */}
+          <div className="absolute left-4 top-0 bottom-0 w-px bg-primary/40" />
 
-          {/* Timeline items */}
           {experiences.map((exp, index) => (
             <motion.div
               key={exp.title}
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="relative pb-12 last:pb-0"
+              className="relative pl-12 pb-12 last:pb-0"
             >
-              {/* Dot at each card */}
-              <div className="absolute left-0 top-4 w-3 h-3 bg-primary rounded-full -translate-x-1.5 z-10" />
+              {/* Dot on the line */}
+              <span className="absolute left-3 top-2 w-3 h-3 bg-primary rounded-full z-10" />
 
               <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-lg p-6 shadow-md hover:shadow-lg transition-all">
                 <div className="flex items-center gap-2 mb-2">
@@ -61,9 +57,6 @@ export function Experience() {
               </div>
             </motion.div>
           ))}
-
-          {/* Bottom dot */}
-          <div className="absolute left-0 bottom-0 w-3 h-3 bg-primary rounded-full -translate-x-1.5 z-10" />
         </div>
       </div>
     </section>
