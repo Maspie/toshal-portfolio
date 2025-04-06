@@ -47,7 +47,7 @@ export function Hero() {
         transition={{ duration: 0.8 }}
         className="container mx-auto grid md:grid-cols-2 gap-8 items-center pt-16 relative z-10"
       >
-        {/* Text content */}
+        {/* Text c ontent */}
         <div className="text-left space-y-6 z-20">
           <motion.div
             initial={{ y: 50, opacity: 0 }}
