@@ -1,14 +1,15 @@
 import { motion } from "framer-motion";
 import {
-  Code2,
   Brain,
   Database,
-  Terminal,
   GitBranch,
   Cloud,
   BarChart3,
   Layers,
 } from "lucide-react";
+import { useTheme } from "@/lib/theme";
+import { ParticlesBackground } from "./ParticlesBackground";
+import Particles from "@tsparticles/react";
 
 const skills = [
   {
@@ -44,9 +45,38 @@ const skills = [
 ];
 
 export function Skills() {
+  const { theme } = useTheme();
+
   return (
-    <section id="skills" className="min-h-screen py-20 px-4">
-      <div className="container mx-auto">
+    <section id="skills" className="min-h-screen py-20 px-4 relative overflow-hidden">
+      {/* Particle background */}
+      {theme === "dark" && <ParticlesBackground />}
+      {theme === "light" && (
+        <Particles
+          id="tsparticles-skills-light"
+          options={{
+            background: { color: "#f9f5ff" },
+            particles: {
+              number: { value: 60, density: { enable: true, area: 800 } },
+              color: { value: "#9c81ff" },
+              links: {
+                enable: true,
+                color: "#9c81ff",
+                distance: 120,
+                opacity: 0.4,
+              },
+              move: { enable: true, speed: 1 },
+              shape: { type: "circle" },
+              opacity: { value: 0.5 },
+              size: { value: 2 },
+            },
+            detectRetina: true,
+          }}
+          className="absolute inset-0 -z-10"
+        />
+      )}
+
+      <div className="container mx-auto relative z-10">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
