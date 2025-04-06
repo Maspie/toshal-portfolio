@@ -19,10 +19,10 @@ export function Contact() {
           transition={{ duration: 0.5 }}
           className="text-3xl md:text-4xl font-bold text-center mb-12"
         >
-          Let's Connect
+          Let&apos;s Connect
         </motion.h2>
 
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -44,9 +44,9 @@ export function Contact() {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-card hover:bg-primary/10 p-3 rounded-full transition-colors"
+                  className="bg-background/30 backdrop-blur-md border border-border hover:bg-primary/10 p-3 rounded-full transition-colors shadow-md"
                 >
-                  <link.icon className="w-6 h-6" />
+                  <link.icon className="w-6 h-6 text-foreground" />
                 </motion.a>
               ))}
             </div>
@@ -57,7 +57,7 @@ export function Contact() {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="bg-card p-6 rounded-lg border w-full"
+            className="w-full rounded-2xl border border-white/10 bg-white/5 backdrop-blur-lg p-8 shadow-xl"
           >
             <form
               action="https://formsubmit.co/twarke1@asu.edu"
@@ -76,7 +76,7 @@ export function Contact() {
                 name="name"
                 required
                 placeholder="Your Name"
-                className="bg-background"
+                className="rounded-xl px-4 py-3 bg-background/80 border border-border focus:outline-none focus:ring-2 focus:ring-primary transition"
               />
 
               <Input
@@ -84,21 +84,21 @@ export function Contact() {
                 name="email"
                 required
                 placeholder="Your Email"
-                className="bg-background"
+                className="rounded-xl px-4 py-3 bg-background/80 border border-border focus:outline-none focus:ring-2 focus:ring-primary transition"
               />
 
               <Textarea
                 name="message"
                 required
                 placeholder="Your Message"
-                className="bg-background min-h-[150px]"
+                className="rounded-xl px-4 py-3 bg-background/80 border border-border min-h-[150px] focus:outline-none focus:ring-2 focus:ring-primary transition"
               />
 
               <Button
                 type="submit"
-                className="w-full gap-2 group relative overflow-hidden"
+                className="w-full gap-2 group relative overflow-hidden rounded-xl py-3 text-base"
               >
-                <Send className="w-4 h-4 group-hover:rotate-45 transition-transform duration-200" />
+                <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
                 Send Message
                 <span className="absolute inset-0 w-full h-full bg-primary/10 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
               </Button>
