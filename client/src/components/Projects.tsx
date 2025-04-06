@@ -89,21 +89,8 @@ export function Projects() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="relative bg-background/70 backdrop-blur-md border border-white/10 rounded-xl p-6 shadow-md overflow-hidden hover:border-primary transition-colors"
+              className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-lg p-6 shadow-lg hover:shadow-xl transition-all"
             >
-              {/* Glow */}
-              <div
-                className="absolute inset-0 -z-10"
-                style={{
-                  background:
-                    "radial-gradient(circle at center, rgba(147, 51, 234, 0.05), transparent 70%)",
-                  maskImage:
-                    "radial-gradient(circle, rgba(0,0,0,0.3) 30%, rgba(0,0,0,0) 100%)",
-                  WebkitMaskImage:
-                    "radial-gradient(circle, rgba(0,0,0,0.3) 30%, rgba(0,0,0,0) 100%)",
-                }}
-              />
-
               <h3 className="text-xl font-semibold mb-3">{project.title}</h3>
               <p className="text-muted-foreground mb-4">{project.description}</p>
 
@@ -124,13 +111,9 @@ export function Projects() {
                     asChild
                     variant="outline"
                     size="sm"
-                    className="gap-2"
+                    className="gap-2 rounded-xl border-white/20"
                   >
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
+                    <a href={project.github} target="_blank" rel="noopener noreferrer">
                       <Github className="w-4 h-4" />
                       Code
                     </a>
@@ -141,13 +124,9 @@ export function Projects() {
                     asChild
                     variant="outline"
                     size="sm"
-                    className="gap-2"
+                    className="gap-2 rounded-xl border-white/20"
                   >
-                    <a
-                      href={project.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
+                    <a href={project.live} target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="w-4 h-4" />
                       Live
                     </a>
