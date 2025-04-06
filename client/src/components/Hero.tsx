@@ -99,9 +99,9 @@ export function Hero() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            Passionate about solving real-world problems with AI, Deep Learning, and Natural Language Processing.
-            With expertise in Python, TensorFlow, PyTorch, and cloud technologies like AWS & Azure, I build AI
-            models that enhance efficiency and drive innovation.
+            I’ve worked on real-world problems using AI, deep learning, and natural language processing. 
+            I’ve built and improved models using Python, TensorFlow, and PyTorch, and I’m comfortable deploying them with cloud tools like AWS and Azure. 
+            I enjoy figuring out ways to make things more efficient or smarter through machine learning.
           </motion.p>
 
           <motion.div
