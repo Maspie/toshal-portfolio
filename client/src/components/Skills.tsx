@@ -2,14 +2,14 @@ import { motion } from "framer-motion";
 import {
   Brain,
   Database,
-  GitBranch,
-  Cloud,
-  BarChart3,
   Layers,
+  BarChart3,
+  Cloud,
+  GitBranch,
 } from "lucide-react";
-import { useTheme } from "@/lib/theme";
-import { ParticlesBackground } from "./ParticlesBackground";
 import Particles from "@tsparticles/react";
+import { ParticlesBackground } from "./ParticlesBackground";
+import { useTheme } from "@/lib/theme";
 
 const skills = [
   {
@@ -53,7 +53,7 @@ export function Skills() {
       {theme === "dark" && <ParticlesBackground />}
       {theme === "light" && (
         <Particles
-          id="tsparticles-skills-light"
+          id="tsparticles-light"
           options={{
             background: { color: "#f9f5ff" },
             particles: {
