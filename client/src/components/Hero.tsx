@@ -11,22 +11,21 @@ export function Hero() {
 
   return (
     <div
-      className={`min-h-screen flex items-center justify-center px-4 relative ${
-        theme === "light" ? "bg-[#f9f5ff]" : "bg-background"
-      }`}
+      className={`min-h-screen flex items-center justify-center px-4 relative overflow-hidden`}
     >
+      {/* Particle background */}
       {theme === "dark" && <ParticlesBackground />}
       {theme === "light" && (
         <Particles
           id="tsparticles-light"
           options={{
-            background: { color: "#f9f5ff" },
+            background: { color: "#f9f5ff" },  // light background color
             particles: {
               number: { value: 60, density: { enable: true, area: 800 } },
-              color: { value: "#d1d5db" },
+              color: { value: "#9c81ff" }, // Light purple color for particles
               links: {
                 enable: true,
-                color: "#e5e7eb",
+                color: "#9c81ff", // Matching particle links color
                 distance: 120,
                 opacity: 0.4,
               },
@@ -41,13 +40,15 @@ export function Hero() {
         />
       )}
 
+      {/* Content */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
         className="container mx-auto grid md:grid-cols-2 gap-8 items-center pt-16 relative z-10"
       >
-        <div className="text-left space-y-6">
+        {/* Text content */}
+        <div className="text-left space-y-6 z-20">
           <motion.div
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -57,10 +58,14 @@ export function Hero() {
             <div className="text-4xl md:text-6xl font-bold mb-4 leading-tight">
               <TypeAnimation
                 sequence={[
-                  "Hi, I'm Toshal Warke", 2000,
-                  "A Machine Learning Engineer", 2000,
-                  "An AI Researcher", 2000,
-                  "A Software Developer", 2000
+                  "Hi, I'm Toshal Warke",
+                  2000,
+                  "A Machine Learning Engineer",
+                  2000,
+                  "An AI Researcher",
+                  2000,
+                  "A Software Developer",
+                  2000,
                 ]}
                 wrapper="div"
                 speed={50}
@@ -79,9 +84,12 @@ export function Hero() {
           >
             <TypeAnimation
               sequence={[
-                "Building AI-driven solutions", 2000,
-                "Enhancing Machine Learning models", 2000,
-                "Developing NLP & Computer Vision applications", 2000
+                "Building AI-driven solutions",
+                2000,
+                "Enhancing Machine Learning models",
+                2000,
+                "Developing NLP & Computer Vision applications",
+                2000,
               ]}
               wrapper="span"
               speed={50}
@@ -95,9 +103,9 @@ export function Hero() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            Passionate about solving real-world problems with AI, Deep Learning, and Natural Language Processing. 
-            With expertise in Python, TensorFlow, PyTorch, and cloud technologies like AWS & Azure, I build AI models 
-            that enhance efficiency and drive innovation.
+            Passionate about solving real-world problems with AI, Deep Learning, and Natural Language Processing. With
+            expertise in Python, TensorFlow, PyTorch, and cloud technologies like AWS & Azure, I build AI models that
+            enhance efficiency and drive innovation.
           </motion.p>
 
           <motion.div
@@ -124,20 +132,23 @@ export function Hero() {
           </motion.div>
         </div>
 
-        {/*image section */}
+        {/* Image with radial fade and no background box */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 1 }}
-          className="relative hidden md:flex justify-center items-center"
+          className="relative hidden md:flex justify-center items-center w-full h-full z-10"
         >
-          <div className="relative w-[90%] h-[500px] rounded-lg overflow-hidden mx-auto my-8 bg-card shadow-md flex items-center justify-center">
-            <img
-              src="/client/image.jpeg"
-              alt="Toshal Warke"
-              className="w-52 h-52 rounded-full object-cover border-4 border-white shadow-lg transition duration-300 hover:scale-105 hover:shadow-xl"
-            />
-          </div>
+          <div
+            className="w-[420px] h-[420px] md:w-[500px] md:h-[500px] bg-no-repeat bg-center bg-cover"
+            style={{
+              backgroundImage: "url('/image.jpeg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              maskImage: "radial-gradient(circle, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)",
+              WebkitMaskImage: "radial-gradient(circle, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)",
+            }}
+          />
         </motion.div>
       </motion.div>
     </div>
