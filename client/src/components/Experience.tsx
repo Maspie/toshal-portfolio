@@ -32,8 +32,8 @@ export function Experience() {
         </motion.h2>
 
         <div className="max-w-3xl mx-auto relative">
-          {/* vertical line */}
-          <div className="absolute left-4 top-0 bottom-0 w-px bg-primary/40" />
+          {/* vertical timeline line */}
+          <div className="absolute left-[1.25rem] top-0 bottom-0 w-[2px] bg-purple-500 z-0" />
 
           {experiences.map((exp, index) => (
             <motion.div
@@ -43,10 +43,11 @@ export function Experience() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="relative pl-12 pb-12 last:pb-0"
             >
-              {/* Dot on the line */}
-              <span className="absolute left-3 top-2 w-3 h-3 bg-primary rounded-full z-10" />
+              {/* Dot */}
+              <span className="absolute left-3 top-3 w-4 h-4 bg-purple-500 rounded-full border-2 border-white z-10 shadow-md" />
 
-              <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-lg p-6 shadow-md hover:shadow-lg transition-all">
+              {/* Card */}
+              <div className="z-10 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 shadow-lg">
                 <div className="flex items-center gap-2 mb-2">
                   <Briefcase className="w-5 h-5 text-primary" />
                   <h3 className="text-xl font-semibold">{exp.title}</h3>
