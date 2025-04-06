@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Button } from "./ui/button";
 import { Download, Send } from "lucide-react";
 import { TypeAnimation } from "react-type-animation";
 import Particles from "@tsparticles/react";
@@ -111,27 +110,32 @@ export function Hero() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.8 }}
           >
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button className="gap-2 relative overflow-hidden group">
-                <Download className="w-4 h-4 group-hover:animate-bounce" />
-                <a href="/toshal-portfolio/Toshal_Warke_Resume.pdf" download>
-                  Download CV
-                </a>
-                <span className="absolute inset-0 w-full h-full bg-primary/10 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
-              </Button>
-            </motion.div>
+            {/* Glassy CV Button */}
+            <motion.a
+              href="/toshal-portfolio/Toshal_Warke_Resume.pdf"
+              download
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="flex items-center gap-2 px-6 py-3 rounded-xl border border-white/10 bg-white/5 text-white font-medium shadow-md backdrop-blur-md hover:bg-primary/20 transition-all"
+            >
+              <Download className="w-4 h-4" />
+              Download CV
+            </motion.a>
 
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button variant="secondary" className="gap-2 relative overflow-hidden group">
-                <Send className="w-4 h-4 group-hover:rotate-45 transition-transform" />
-                <a href="mailto:twarke1@asu.edu">Contact Me</a>
-                <span className="absolute inset-0 w-full h-full bg-primary/10 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
-              </Button>
-            </motion.div>
+            {/* Glassy Contact Me Button */}
+            <motion.a
+              href="#contact"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="flex items-center gap-2 px-6 py-3 rounded-xl border border-white/10 bg-white/5 text-white font-medium shadow-md backdrop-blur-md hover:bg-primary/20 transition-all"
+            >
+              <Send className="w-4 h-4" />
+              Contact Me
+            </motion.a>
           </motion.div>
         </div>
 
-        {/* Right Image (no Tilt wrapper) */}
+        {/* Right Image */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
