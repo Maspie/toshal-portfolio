@@ -32,8 +32,8 @@ export function Experience() {
         </motion.h2>
 
         <div className="max-w-3xl mx-auto relative">
-          {/* vertical timeline line */}
-          <div className="absolute left-[1.25rem] top-0 bottom-0 w-[2px] bg-purple-500 z-0" />
+          {/* vertical line with small top extension */}
+          <div className="absolute left-[1.25rem] top-[-16px] bottom-0 w-[2px] bg-purple-500 z-0" />
 
           {experiences.map((exp, index) => (
             <motion.div
@@ -43,10 +43,15 @@ export function Experience() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="relative pl-12 pb-12 last:pb-0"
             >
-              {/* Dot */}
-              <span className="absolute left-3 top-3 w-4 h-4 bg-purple-500 rounded-full border-2 border-white z-10 shadow-md" />
+              {/* Animated Dot */}
+              <motion.span
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20, delay: index * 0.1 }}
+                className="absolute left-3 top-3 w-4 h-4 bg-purple-500 rounded-full border-2 border-white z-10 shadow-md"
+              />
 
-              {/* Card */}
+              {/* Glassy Card */}
               <div className="z-10 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 shadow-lg">
                 <div className="flex items-center gap-2 mb-2">
                   <Briefcase className="w-5 h-5 text-primary" />
