@@ -1,5 +1,14 @@
 import { motion } from "framer-motion";
-import { Code2, Brain, Database, Terminal, GitBranch, Cloud, BarChart3, Layers } from "lucide-react";
+import {
+  Code2,
+  Brain,
+  Database,
+  Terminal,
+  GitBranch,
+  Cloud,
+  BarChart3,
+  Layers,
+} from "lucide-react";
 
 const skills = [
   {
@@ -38,7 +47,7 @@ export function Skills() {
   return (
     <section id="skills" className="min-h-screen py-20 px-4">
       <div className="container mx-auto">
-        <motion.h2 
+        <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -54,7 +63,7 @@ export function Skills() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-card p-6 rounded-lg border hover:border-primary transition-colors"
+              className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-lg p-6 shadow-md hover:shadow-lg transition-all"
             >
               <skill.icon className="w-10 h-10 text-primary mb-4" />
               <h3 className="text-xl font-semibold mb-2">{skill.title}</h3>
