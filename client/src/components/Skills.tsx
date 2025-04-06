@@ -48,12 +48,12 @@ export function Skills() {
   const { theme } = useTheme();
 
   return (
-    <section id="skills" className="min-h-screen py-20 px-4 relative overflow-hidden">
+    <section id="skills" className="relative overflow-hidden min-h-screen py-20 px-4">
       {/* Particle background */}
       {theme === "dark" && <ParticlesBackground />}
       {theme === "light" && (
         <Particles
-          id="tsparticles-light"
+          id="tsparticles-light-skills"
           options={{
             background: { color: "#f9f5ff" },
             particles: {
@@ -76,6 +76,7 @@ export function Skills() {
         />
       )}
 
+      {/* Content sits on top of particles */}
       <div className="container mx-auto relative z-10">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
