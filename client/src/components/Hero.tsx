@@ -67,7 +67,7 @@ export function Hero() {
                 wrapper="div"
                 speed={50}
                 repeat={Infinity}
-                className="bg-gradient-to-r from-primary to-purple-500 dark:to-blue-500 text-transparent bg-clip-text"
+                className="bg-gradient-to-r from-purple-400 to-blue-500 text-transparent bg-clip-text"
                 style={{ backgroundSize: "200% 200%" }}
               />
             </div>
