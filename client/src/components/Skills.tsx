@@ -7,9 +7,6 @@ import {
   Cloud,
   GitBranch,
 } from "lucide-react";
-import Particles from "@tsparticles/react";
-import { ParticlesBackground } from "./ParticlesBackground";
-import { useTheme } from "@/lib/theme";
 
 const skills = [
   {
@@ -45,39 +42,9 @@ const skills = [
 ];
 
 export function Skills() {
-  const { theme } = useTheme();
-
   return (
-    <section id="skills" className="relative overflow-hidden min-h-screen py-20 px-4">
-      {/* Particle background */}
-      {theme === "dark" && <ParticlesBackground />}
-      {theme === "light" && (
-        <Particles
-          id="tsparticles-light-skills"
-          options={{
-            background: { color: "#f9f5ff" },
-            particles: {
-              number: { value: 60, density: { enable: true, area: 800 } },
-              color: { value: "#9c81ff" },
-              links: {
-                enable: true,
-                color: "#9c81ff",
-                distance: 120,
-                opacity: 0.4,
-              },
-              move: { enable: true, speed: 1 },
-              shape: { type: "circle" },
-              opacity: { value: 0.5 },
-              size: { value: 2 },
-            },
-            detectRetina: true,
-          }}
-          className="absolute inset-0 -z-10"
-        />
-      )}
-
-      {/* Content sits on top of particles */}
-      <div className="container mx-auto relative z-10">
+    <section id="skills" className="relative z-10 min-h-screen py-20 px-4 overflow-hidden">
+      <div className="container mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
