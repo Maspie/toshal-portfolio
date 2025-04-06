@@ -10,22 +10,20 @@ export function Hero() {
   const { theme } = useTheme();
 
   return (
-    <div
-      className={`min-h-screen flex items-center justify-center px-4 relative overflow-hidden`}
-    >
+    <div className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden">
       {/* Particle background */}
       {theme === "dark" && <ParticlesBackground />}
       {theme === "light" && (
         <Particles
           id="tsparticles-light"
           options={{
-            background: { color: "#f9f5ff" },  // light background color
+            background: { color: "#f9f5ff" },
             particles: {
               number: { value: 60, density: { enable: true, area: 800 } },
-              color: { value: "#9c81ff" }, // Light purple color for particles
+              color: { value: "#9c81ff" },
               links: {
                 enable: true,
-                color: "#9c81ff", // Matching particle links color
+                color: "#9c81ff",
                 distance: 120,
                 opacity: 0.4,
               },
@@ -40,14 +38,13 @@ export function Hero() {
         />
       )}
 
-      {/* Content */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
         className="container mx-auto grid md:grid-cols-2 gap-8 items-center pt-16 relative z-10"
       >
-        {/* Text c ontent */}
+        {/* Left Text Content */}
         <div className="text-left space-y-6 z-20">
           <motion.div
             initial={{ y: 50, opacity: 0 }}
@@ -103,13 +100,13 @@ export function Hero() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            Passionate about solving real-world problems with AI, Deep Learning, and Natural Language Processing. With
-            expertise in Python, TensorFlow, PyTorch, and cloud technologies like AWS & Azure, I build AI models that
-            enhance efficiency and drive innovation.
+            Passionate about solving real-world problems with AI, Deep Learning, and Natural Language Processing.
+            With expertise in Python, TensorFlow, PyTorch, and cloud technologies like AWS & Azure, I build AI
+            models that enhance efficiency and drive innovation.
           </motion.p>
 
           <motion.div
-            className="flex gap-4"
+            className="flex flex-wrap gap-4"
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.8 }}
@@ -117,7 +114,9 @@ export function Hero() {
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button className="gap-2 relative overflow-hidden group">
                 <Download className="w-4 h-4 group-hover:animate-bounce" />
-                <a href="/Toshal_Warke_Resume.pdf" download>Download CV</a>
+                <a href="/toshal-portfolio/Toshal_Warke_Resume.pdf" download>
+                  Download CV
+                </a>
                 <span className="absolute inset-0 w-full h-full bg-primary/10 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
               </Button>
             </motion.div>
@@ -132,21 +131,21 @@ export function Hero() {
           </motion.div>
         </div>
 
-        {/* Image with radial fade and no background box */}
+        {/* Right Image */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 1 }}
-          className="relative hidden md:flex justify-center items-center w-full h-full z-10"
+          className="relative flex justify-center items-center w-full h-full z-10"
         >
           <div
-            className="w-[420px] h-[420px] md:w-[500px] md:h-[500px] bg-no-repeat bg-center bg-cover"
+            className="w-[320px] h-[320px] md:w-[420px] md:h-[420px] bg-no-repeat bg-center bg-cover rounded-full shadow-lg"
             style={{
-              backgroundImage: "url('/image.jpeg')",
+              backgroundImage: "url('/toshal-portfolio/image.jpeg')",
               backgroundSize: "cover",
               backgroundPosition: "center",
-              maskImage: "radial-gradient(circle, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)",
-              WebkitMaskImage: "radial-gradient(circle, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)",
+              maskImage: "radial-gradient(circle, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 100%)",
+              WebkitMaskImage: "radial-gradient(circle, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 100%)",
             }}
           />
         </motion.div>
