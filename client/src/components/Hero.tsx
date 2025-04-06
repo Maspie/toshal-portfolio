@@ -131,23 +131,24 @@ export function Hero() {
           </motion.div>
         </div>
 
-        {/* Right Image */}
+        {/* Right Image with fade edge */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 1 }}
           className="relative flex justify-center items-center w-full h-full z-10"
         >
-          <div
-            className="w-[320px] h-[320px] md:w-[420px] md:h-[420px] bg-no-repeat bg-center bg-cover rounded-full shadow-lg"
-            style={{
-              backgroundImage: "url('/toshal-portfolio/image.jpeg')",
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              maskImage: "radial-gradient(circle, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 100%)",
-              WebkitMaskImage: "radial-gradient(circle, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 100%)",
-            }}
-          />
+          <div className="w-[320px] h-[320px] md:w-[420px] md:h-[420px] relative">
+            <img
+              src="/toshal-portfolio/image.jpeg"
+              alt="Toshal"
+              className="w-full h-full object-cover rounded-full shadow-xl"
+              style={{
+                maskImage: "radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%)",
+                WebkitMaskImage: "radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%)",
+              }}
+            />
+          </div>
         </motion.div>
       </motion.div>
     </div>
