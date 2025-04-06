@@ -1,6 +1,5 @@
 import { Link } from "wouter";
 import { ThemeToggle } from "./ThemeToggle";
-import { Button } from "./ui/button";
 import { motion } from "framer-motion";
 
 export function Navigation() {
@@ -11,6 +10,10 @@ export function Navigation() {
     { href: "#projects", label: "Projects" },
     { href: "#contact", label: "Contact" },
   ];
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <motion.nav 
@@ -25,15 +28,25 @@ export function Navigation() {
         </Link>
 
         <div className="hidden md:flex items-center gap-6">
-          {navItems.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="text-sm font-medium hover:text-primary transition-colors"
-            >
-              {item.label}
-            </a>
-          ))}
+          {navItems.map((item) =>
+            item.label === "Home" ? (
+              <button
+                key={item.href}
+                onClick={scrollToTop}
+                className="text-sm font-medium hover:text-primary transition-colors"
+              >
+                {item.label}
+              </button>
+            ) : (
+              <a
+                key={item.href}
+                href={item.href}
+                className="text-sm font-medium hover:text-primary transition-colors"
+              >
+                {item.label}
+              </a>
+            )
+          )}
           <ThemeToggle />
         </div>
 
