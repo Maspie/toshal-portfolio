@@ -6,7 +6,7 @@ import { Skills } from "@/components/Skills";
 import { Experience } from "@/components/Experience";
 import { Projects } from "@/components/Projects";
 import { Contact } from "@/components/Contact";
-import ChatbotLauncher from "@/components/ChatbotLauncher"; // ✅ NEW
+// import ChatbotLauncher from "@/components/ChatbotLauncher"; //  Temporarily removed
 
 export default function Home() {
   const { scrollYProgress } = useScroll();
@@ -41,7 +41,7 @@ export default function Home() {
         </motion.div>
       </main>
 
-      <ChatbotLauncher /> {/* ✅ Floating chatbot button at bottom */}
+      {/* <ChatbotLauncher />  Removed temporarily */}
     </div>
   );
 }
