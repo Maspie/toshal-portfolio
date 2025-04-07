@@ -2,8 +2,11 @@ import { motion } from "framer-motion";
 import { Send, Github, Linkedin } from "lucide-react";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
+import { useTheme } from "@/lib/theme";
 
 export function Contact() {
+  const { theme } = useTheme();
+
   const socialLinks = [
     { icon: Github, href: "https://github.com/Maspie", label: "GitHub" },
     { icon: Linkedin, href: "https://linkedin.com/in/toshal-warke", label: "LinkedIn" },
@@ -93,12 +96,16 @@ export function Contact() {
                 className="rounded-xl px-4 py-3 bg-background/80 border border-border min-h-[150px] focus:outline-none focus:ring-2 focus:ring-primary transition"
               />
 
-              {/* Glassy Send Button like Hero section */}
+              {/* Button adjusts per theme */}
               <motion.button
                 type="submit"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-white/10 bg-white/5 text-white font-medium shadow-md backdrop-blur-md hover:bg-primary/20 transition-all"
+                className={`w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl border shadow-md backdrop-blur-md transition-all ${
+                  theme === "light"
+                    ? "border-gray-300 bg-white text-black hover:bg-gray-100"
+                    : "border-white/10 bg-white/5 text-white hover:bg-primary/20"
+                }`}
               >
                 <Send className="w-4 h-4 group-hover:rotate-45 transition-transform" />
                 Send Message
