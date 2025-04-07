@@ -99,8 +99,8 @@ export function Hero() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            I’ve worked on real-world problems using AI, deep learning, and natural language processing. 
-            I’ve built and improved models using Python, TensorFlow, and PyTorch, and I’m comfortable deploying them with cloud tools like AWS and Azure. 
+            I’ve worked on real-world problems using AI, deep learning, and natural language processing.
+            I’ve built and improved models using Python, TensorFlow, and PyTorch, and I’m comfortable deploying them with cloud tools like AWS and Azure.
             I enjoy figuring out ways to make things more efficient or smarter through machine learning.
           </motion.p>
 
@@ -116,7 +116,11 @@ export function Hero() {
               download
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="flex items-center gap-2 px-6 py-3 rounded-xl border border-white/10 bg-white/5 text-white font-medium shadow-md backdrop-blur-md hover:bg-primary/20 transition-all"
+              className={`flex items-center gap-2 px-6 py-3 rounded-xl border shadow-md backdrop-blur-md transition-all ${
+                theme === "light"
+                  ? "border-gray-300 bg-white text-black hover:bg-gray-100"
+                  : "border-white/10 bg-white/5 text-white hover:bg-primary/20"
+              }`}
             >
               <Download className="w-4 h-4" />
               Download CV
@@ -127,7 +131,11 @@ export function Hero() {
               href="#contact"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="flex items-center gap-2 px-6 py-3 rounded-xl border border-white/10 bg-white/5 text-white font-medium shadow-md backdrop-blur-md hover:bg-primary/20 transition-all"
+              className={`flex items-center gap-2 px-6 py-3 rounded-xl border shadow-md backdrop-blur-md transition-all ${
+                theme === "light"
+                  ? "border-gray-300 bg-white text-black hover:bg-gray-100"
+                  : "border-white/10 bg-white/5 text-white hover:bg-primary/20"
+              }`}
             >
               <Send className="w-4 h-4" />
               Contact Me
