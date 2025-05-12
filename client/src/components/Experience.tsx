@@ -13,8 +13,8 @@ const experiences = [
   {
     title: "Data Analyst Intern",
     company: "Pratham Software",
-    period: "May 2020 - September 2020",
-    duration: "< 1 yr",
+    period: "Jun 2019 - July 2020",
+    duration: "> 1 yr",
     description:
       "Created interactive dashboards and visualizations using Python, Seaborn, and Tableau, improving decision-making efficiency by 15%. Optimized Azure Blob Storage architecture, increasing data efficiency by 30% and ensuring 99.9% uptime.",
   },
