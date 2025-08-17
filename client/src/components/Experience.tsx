@@ -3,6 +3,14 @@ import { Briefcase } from "lucide-react";
 
 const experiences = [
   {
+    title: "AI Developer",
+    company: "Gologic",
+    period: "June 2025 - Present",
+    duration: "Present",
+    description:
+      "Working on AI chatbots and multi-agent architectures. Building cool, innovative conversational AI systems and exploring advanced multi-agent collaboration techniques.",
+  },
+  {
     title: "Software Engineer",
     company: "ThinkFuture Technologies",
     period: "March 2021 - June 2023",
